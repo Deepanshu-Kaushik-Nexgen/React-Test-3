@@ -1,0 +1,47 @@
+.navbarMainContainer{
+    padding: 2em 3em;
+    background-color: rgb(16, 143, 101);
+    position: relative;
+   
+    .menuItems{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        & li {
+            list-style: none;
+            cursor: pointer;
+            color: #FFF;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 1em;
+        }
+
+        .activeMenuBtn{
+            background-color: rgb(217, 129, 21);
+            border-radius: 5px;
+        }
+    }
+    
+    .subMenus{
+        .subMenu{
+            position: absolute;
+            width: 40%;
+            height: 85vh;
+            left: 0;
+            top: 100%;
+            background-color: bisque;
+
+            & li {
+                list-style: none;
+                padding: 2em 3em;
+                cursor: pointer;
+                margin: 0 auto;
+            }
+
+            .activeSubMenuBtn{
+                background-color: rgb(217, 129, 21);
+            }
+        }
+    }
+}
