@@ -10,7 +10,6 @@ const Index = () => {
     const [subMenuActive5, setSubMenuActive5] = useState(0);
 
     useEffect(() => {
-        // Handle popstate event to manage browser back/forward button
         const handlePopState = (event) => {
             if (event.state && event.state.menuActive !== undefined) {
                 setMenuActive(event.state.menuActive);
@@ -26,7 +25,6 @@ const Index = () => {
 
     const toggleActiveButton = (id) => {
         setMenuActive(id);
-        // Push the new state to the history stack
         window.history.pushState({ menuActive: id }, '');
     };
 
