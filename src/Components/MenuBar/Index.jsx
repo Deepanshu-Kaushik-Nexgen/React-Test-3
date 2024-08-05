@@ -11,8 +11,13 @@ const Index = () => {
 
     useEffect(() => {
         const handlePopState = (event) => {
-            if (event.state && event.state.menuActive !== undefined) {
-                setMenuActive(event.state.menuActive);
+            if (event.state) {
+                if (event.state.menuActive !== undefined) setMenuActive(event.state.menuActive);
+                if (event.state.subMenuActive1 !== undefined) setSubMenuActive1(event.state.subMenuActive1);
+                if (event.state.subMenuActive2 !== undefined) setSubMenuActive2(event.state.subMenuActive2);
+                if (event.state.subMenuActive3 !== undefined) setSubMenuActive3(event.state.subMenuActive3);
+                if (event.state.subMenuActive4 !== undefined) setSubMenuActive4(event.state.subMenuActive4);
+                if (event.state.subMenuActive5 !== undefined) setSubMenuActive5(event.state.subMenuActive5);
             }
         };
 
@@ -25,27 +30,74 @@ const Index = () => {
 
     const toggleActiveButton = (id) => {
         setMenuActive(id);
-        window.history.pushState({ menuActive: id }, '');
+        window.history.pushState({
+            menuActive: id,
+            subMenuActive1,
+            subMenuActive2,
+            subMenuActive3,
+            subMenuActive4,
+            subMenuActive5,
+        }, '');
     };
 
     const toggleSubMenuActiveButton1 = (id) => {
         setSubMenuActive1(id);
+        window.history.pushState({
+            menuActive,
+            subMenuActive1: id,
+            subMenuActive2,
+            subMenuActive3,
+            subMenuActive4,
+            subMenuActive5,
+        }, '');
     };
 
     const toggleSubMenuActiveButton2 = (id) => {
         setSubMenuActive2(id);
+        window.history.pushState({
+            menuActive,
+            subMenuActive1,
+            subMenuActive2: id,
+            subMenuActive3,
+            subMenuActive4,
+            subMenuActive5,
+        }, '');
     };
 
     const toggleSubMenuActiveButton3 = (id) => {
         setSubMenuActive3(id);
+        window.history.pushState({
+            menuActive,
+            subMenuActive1,
+            subMenuActive2,
+            subMenuActive3: id,
+            subMenuActive4,
+            subMenuActive5,
+        }, '');
     };
 
     const toggleSubMenuActiveButton4 = (id) => {
         setSubMenuActive4(id);
+        window.history.pushState({
+            menuActive,
+            subMenuActive1,
+            subMenuActive2,
+            subMenuActive3,
+            subMenuActive4: id,
+            subMenuActive5,
+        }, '');
     };
 
     const toggleSubMenuActiveButton5 = (id) => {
         setSubMenuActive5(id);
+        window.history.pushState({
+            menuActive,
+            subMenuActive1,
+            subMenuActive2,
+            subMenuActive3,
+            subMenuActive4,
+            subMenuActive5: id,
+        }, '');
     };
 
     return (
